@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: backend-deploy
+spec:
+  serviceAccountName: helm-deployer
+  selector:
+    matchLabels:
+      app: backend-deploy
+  template:
+    metadata:
+      labels:
+        app: backend-deploy  
+    spec:
+      serviceAccountName: helm-deployer 
+      containers:          
+      - name: backend-deploy
+        image: {{ .Values.backend.image }} : {{ .Values.backend.image.tag }}  
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: helm-deployer
+  namespace: default
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: helm-deployer-role
+  namespace: default
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources: ["deployments", "replicasets", "pods", "services", "secrets"]
+  verbs: ["get", "list", "create", "update", "delete"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses"]
+  verbs: ["get", "list", "create", "update", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: helm-deployer-role-binding
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: helm-deployer
+  namespace: default
+roleRef:
+  kind: Role
+  name: helm-deployer-role
+  apiGroup: rbac.authorization.k8s.io

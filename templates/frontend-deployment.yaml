@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: frontend-deploy
+spec:
+  selector:
+    matchLabels:
+      app: frontend-deploy
+  template:
+    metadata:
+      labels:
+        app: frontend-deploy  
+    spec:
+      containers:          
+      - name: frontend-deploy
+        image: {{ .Values.frontend.image }} : {{ .Values.frontend.image.tag }}  
