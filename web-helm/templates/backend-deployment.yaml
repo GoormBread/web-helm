@@ -22,14 +22,14 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: backend-helm-deployer
-  namespace: paran2024
+  namespace: paran-2024
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: backend-helm-deployer-role
-  namespace: paran2024
+  namespace: paran-2024
 rules:
 - apiGroups: ["", "extensions", "apps"]
   resources: ["deployments", "replicasets", "pods", "services", "secrets"]
@@ -42,11 +42,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: backend-helm-deployer-role-binding
-  namespace: paran2024
+  namespace: paran-2024
 subjects:
 - kind: ServiceAccount
   name: backend-helm-deployer
-  namespace: paran2024
+  namespace: paran-2024
 roleRef:
   kind: Role
   name: backend-helm-deployer-role
