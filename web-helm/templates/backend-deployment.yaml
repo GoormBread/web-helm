@@ -12,7 +12,7 @@ spec:
       labels:
         app: backend-deploy  
     spec:
-      serviceAccountName: helm-deployer 
+      serviceAccountName: backend-helm-deployer 
       containers:          
       - name: backend-deploy
         image: {{ .Values.backend.image.name }}:{{ .Values.backend.image.tag }}  
