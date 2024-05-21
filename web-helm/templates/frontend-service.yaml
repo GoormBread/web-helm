@@ -7,5 +7,6 @@ spec:
     app: frontend-deploy
   ports:
     - protocol: TCP
-      port: 5173
+      port: 80
+      targetPort: 5173
   type: ClusterIP

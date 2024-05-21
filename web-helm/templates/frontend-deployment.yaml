@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deploy
@@ -13,4 +13,6 @@ spec:
     spec:
       containers:          
       - name: frontend-deploy
-        image: {{ .Values.frontend.image }} : {{ .Values.frontend.image.tag }}  
+        image: {{ .Values.frontend.image.name }}:{{ .Values.frontend.image.tag }}  
+        ports:
+          - containerPort: 5173
