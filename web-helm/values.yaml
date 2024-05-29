@@ -1,7 +1,7 @@
 backend:
   image:
     name: geonhyukseo/goormback
-    tag: 3238c0015f5dcd0070895631f25cbda7e108f499
+    tag: f42f60b3f9393dcabe93ccc248a61b91a2ab6a16
 frontend:
   image:
     name: geonhyukseo/goormfront
