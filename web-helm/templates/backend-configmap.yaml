@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  .env: |
+    DATABASE_URL={{ .Values.backend.env.DATABASE_URL }}
+    REDIS_SESSION_URL={{ .Values.backend.env.REDIS_SSESION_URL }}
+    REDIS_LOBBY_URL={{ .Values.backend.env.REDIS_LOBBY_URL }}
+    SESSION_SECRET_KEY={{ .Values.backend.env.SESSION_SECRET_KEY }}

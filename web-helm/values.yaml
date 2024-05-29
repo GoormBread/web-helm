@@ -1,7 +1,13 @@
 backend:
   image:
     name: geonhyukseo/goormback
-    tag: f42f60b3f9393dcabe93ccc248a61b91a2ab6a16
+    tag: 876b0259be34e0e90db6823f6b97c3693d6b198e
+  env:
+    DATABASE_URL: "postgresql://root:root@localhost:30032/goormbread?schema: public"
+    REDIS_SESSION_URL: "redis://localhost:30079/0"
+    REDIS_LOBBY_URL: "redis://localhost:30079/1"
+    SESSION_SECRET_KEY: "jglskjglskdgjdlkfbjdofjwvefkvcqwp"
+
 frontend:
   image:
     name: geonhyukseo/goormfront
