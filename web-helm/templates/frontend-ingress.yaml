@@ -7,7 +7,6 @@ metadata:
 spec:
   ingressClassName: frontend-ingressclass
   rules:
-    - host: paran2024.iptime.org
     - http: 
         paths:
         - pathType: Prefix
