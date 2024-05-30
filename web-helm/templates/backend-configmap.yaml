@@ -4,7 +4,7 @@ metadata:
   name: backend-config
 data:
   .env: |
-    DATABASE_URL={{ .Values.backend.environments.DATABASE_URL }}
-    REDIS_SESSION_URL={{ .Values.backend.environments.REDIS_SSESION_URL }}
-    REDIS_LOBBY_URL={{ .Values.backend.environments.REDIS_LOBBY_URL }}
-    SESSION_SECRET_KEY={{ .Values.backend.environments.SESSION_SECRET_KEY }}
+    DATABASE_URL={{ .Values.environments.DATABASE_URL }}
+    REDIS_SESSION_URL={{ .Values.environments.REDIS_SSESION_URL }}
+    REDIS_LOBBY_URL={{ .Values.environments.REDIS_LOBBY_URL }}
+    SESSION_SECRET_KEY={{ .Values.environments.SESSION_SECRET_KEY }}
