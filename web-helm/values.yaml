@@ -10,4 +10,4 @@ backend:
 frontend:
   image:
     name: geonhyukseo/goormfront
-    tag: 4f3175eec562de7c7ef27172b472961b7cd61963
+    tag: 006e8e779b701893d2b76fc4d691cf4e1ececbdc
