@@ -5,6 +5,6 @@ metadata:
 data:
   .env: |
     DATABASE_URL={{ .Values.environments.DATABASE_URL }}
-    REDIS_SESSION_URL={{ .Values.environments.REDIS_SSESION_URL }}
-    REDIS_LOBBY_URL={{ .Values.environments.REDIS_LOBBY_URL }}
+    REDIS_SESSION_URL={{ .Values.environments.REDIS_URL }}/0
+    REDIS_LOBBY_URL={{ .Values.environments.REDIS_URL }}/1
     SESSION_SECRET_KEY={{ .Values.environments.SESSION_SECRET_KEY }}

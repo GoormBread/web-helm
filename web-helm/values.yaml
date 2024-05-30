@@ -4,8 +4,7 @@ backend:
     tag: e80ca388ef0022cc3dfd8c8b86dee1e463f1306f
 environments:
   DATABASE_URL: postgresql://root:root@localhost:30032/goormbread?schema=public
-  REDIS_SESSION_URL: redis://localhost:30079/0
-  REDIS_LOBBY_URL: redis://localhost:30079/1
+  REDIS_URL: redis://localhost:30079
   SESSION_SECRET_KEY: jglskjglskdgjdlkfbjdofjwvefkvcqwp
 frontend:
   image:
