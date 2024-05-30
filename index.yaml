@@ -3,12 +3,12 @@ entries:
   web-helm:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-30T11:22:26.34513+09:00"
+    created: "2024-05-30T11:34:18.666264+09:00"
     description: goormbread helm for backend and front
-    digest: b9dc5e05128b5a15a6b7ff537983e4526d14af5e9c2345555ac698ec5b7f9bc8
+    digest: fde925b1f462348833bb6aaf0c279bfe38c367a5d66396c4307eb3af37103618
     name: web-helm
     type: application
     urls:
     - web-helm-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-30T11:22:26.344344+09:00"
+generated: "2024-05-30T11:34:18.665502+09:00"
