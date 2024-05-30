@@ -19,7 +19,7 @@ metadata:
         proxycachebypass $httpupgrade;
       }
 spec:
-  ingressClassName: game-ingressclass
+  ingressClassName: frontend-ingressclass
   
   rules:
     - http: 
