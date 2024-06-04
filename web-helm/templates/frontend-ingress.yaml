@@ -5,7 +5,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: frontend-ingressclass
+  ingressClassName: paran-ingressclass
   rules:
     - host: paran2024.iptime.org
       http:

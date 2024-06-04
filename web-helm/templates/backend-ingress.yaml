@@ -19,7 +19,7 @@ metadata:
         proxycachebypass $httpupgrade;
       }
 spec:
-  ingressClassName: frontend-ingressclass
+  ingressClassName: paran-ingressclass
   rules:
     - host: paran2024.iptime.org
       http:
