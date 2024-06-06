@@ -3,11 +3,12 @@ kind: Ingress
 metadata:
   name: ingress-backend-{{ .Release.Name }}
   annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /socket.io
     nginx.ingress.kubernetes.io/websocket-services: "backend-service"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     nginx.ingress.kubernetes.io/server-snippets: |
-      location /socket.io {
+      location /websocket/socket.io {
         proxy_set_header Upgrade $http_upgrade;
         proxy_http_version 1.1;
         proxy_set_header X-Forwarded-Host $http_host;
@@ -25,7 +26,7 @@ spec:
       http:
         paths:
           - pathType: Prefix
-            path: /socket.io
+            path: /websocket/socket.io
             backend:
               service:
                 name: backend-service
