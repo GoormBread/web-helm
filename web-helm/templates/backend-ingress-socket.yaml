@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-backend-{{ .Release.Name }}
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /socket.io/
     nginx.ingress.kubernetes.io/websocket-services: "backend-service"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
@@ -17,7 +17,7 @@ metadata:
         proxy_set_header Host $host;
         proxy_set_header Connection "upgrade";
         proxy_cache_bypass $http_upgrade;
-        proxy_pass http://backend-service:3000/socket.io;
+        proxy_pass http://backend-service:3000/socket.io/;
       }
 spec:
   ingressClassName: paran-ingressclass
