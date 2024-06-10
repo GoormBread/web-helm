@@ -9,4 +9,4 @@ environments:
 frontend:
   image:
     name: geonhyukseo/goormfront
-    tag: c678451f3ae043543128d546585d1b5644dd9198
+    tag: 153848d465ea006261376aff09fbd264ef594652
