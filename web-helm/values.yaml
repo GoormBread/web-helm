@@ -1,7 +1,7 @@
 backend:
   image:
     name: geonhyukseo/goormback
-    tag: 24ab384e52559215589cf174c88ea2b4c355ead0
+    tag: 21bebadafa1230d9fc838e12afbda8b7c39ca195
 environments:
   DATABASE_URL: postgresql://root:root@localhost:30032/goormbread?schema=public
   REDIS_URL: redis://localhost:30079
